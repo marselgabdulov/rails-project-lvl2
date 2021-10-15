@@ -5,6 +5,7 @@ AllCops:
     - 'tmp/**/*'
     - '.git/**/*'
     - 'bin/*'
+    - 'db/*'
   TargetRubyVersion: 3.0.1
 
 Style/FrozenStringLiteralComment:
