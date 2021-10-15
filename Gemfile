@@ -61,3 +61,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise'
+
+gem 'bootstrap', '~> 5.1.0'
+
+gem 'jquery-rails'
