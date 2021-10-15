@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100" lang="ru">
   <head>
     <title>RailsProjectLvl2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,10 +10,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render "layouts/header" %>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class="d-flex flex-column h-100">
+    <div class="container">
+      <header>
+        <%= render "layouts/navigation" %>
+      </header>
+    </div>
+    <div class="container">
+      <main role="main">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
