@@ -1,0 +1,9 @@
+h2= t('posts.title')
+- @posts.each do |post|
+  .row
+    .col-md-12 
+      .card.mb-3
+        .card-body 
+          h2.h5.card-title
+            =link_to post.title, post, class: 'link-dark text-decoration-none'
+          .card-text.mb-2= post.body
