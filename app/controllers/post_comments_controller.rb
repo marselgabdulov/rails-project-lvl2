@@ -18,7 +18,7 @@ class PostCommentsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:post_id])
-  endx  
+  end
 
   def check_author
     redirect_to post_path(@post), notice: 'Действие недопустимо. Вы не автор этого комментария.' if @post.post_comments.find(params[:id]).user != current_user
@@ -27,5 +27,4 @@ class PostCommentsController < ApplicationController
   def post_comment_params
     params.require(:post_comment).permit(:content)
   end
-
 end
