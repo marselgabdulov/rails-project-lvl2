@@ -66,4 +66,6 @@ gem 'bootstrap', '~> 5.1.0'
 
 gem 'jquery-rails'
 
+gem 'slim'
+
 gem 'simple_form'
