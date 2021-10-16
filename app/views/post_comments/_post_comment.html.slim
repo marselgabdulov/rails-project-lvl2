@@ -1,0 +1,4 @@
+p= post_comment.content
+p= post_comment.user.email
+- if current_user == post_comment.user
+  div= link_to 'Удалить комментарий', [post_comment.post, post_comment], method: :delete, data: { confirm: 'Вы уверены?' }

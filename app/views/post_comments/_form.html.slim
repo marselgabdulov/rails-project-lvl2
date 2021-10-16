@@ -1,0 +1,3 @@
+= simple_form_for([@post, @post.post_comments.build]) do |f|
+  = f.input :content, label: 'Ваш комментарий' 
+  = f.submit
