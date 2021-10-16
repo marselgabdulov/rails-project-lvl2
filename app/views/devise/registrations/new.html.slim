@@ -1,0 +1,19 @@
+h2 Зарегистрироваться
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .mb-3
+    = f.label :email, for: "exampleInputEmail1", class: "form-label"
+    br/
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "exampleInputEmail1"
+  .mb-3
+    = f.label :password, "Пароль",  for: "exampleInputPassword1", class: "form-label"
+    - if @minimum_password_length
+      em
+        | (#{@minimum_password_length} знаков минимум)
+    br/
+    = f.password_field :password, autocomplete: "введите пароль", class: "form-control", id: "exampleInputPassword1"
+  .mb-3
+    = f.label :password_confirmation, "Подтвердите пароль",  for: "exampleInputPassword2", class: "form-label"
+    = f.password_field :password, autocomplete: "пароль", class: "form-control", id: "exampleInputPassword2"
+  = f.submit "Регистрация", class: "btn btn-primary"
+= render "devise/shared/links"
