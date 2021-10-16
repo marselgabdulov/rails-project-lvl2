@@ -1,5 +1,9 @@
 h1.mb-3.mb-lg-3= @post.title
 p= @post.body
-- if current_user.id == @post.user_id
+- if current_user == @post.user
   div= link_to "Редактировать пост", edit_post_path(@post)
-  div= link_to 'Удалить пост', { controller: "posts", action: "destroy", id: @post.id }, data: { confirm: 'Вы уверены?' }, method: :delete
+  div= link_to 'Удалить пост', @post, data: { confirm: 'Вы уверены?' }, method: :delete
+
+div= render @post.post_comments
+
+= render "post_comments/form"
