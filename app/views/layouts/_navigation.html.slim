@@ -1,0 +1,11 @@
+nav.navbar.navbar-light
+  .container-fluid
+    = link_to 'X', root_path, class: 'navbar-brand'
+    ul.navbar-nav.list-group.list-group-horizontal.d-flex
+      li.nav-item.list-group-item
+        - if user_signed_in?
+          = link_to "Выйти", destroy_user_session_path, method: :delete, class: "nav-link"
+        - else
+          = link_to "Войти", new_user_session_path, class: "nav-link"
+      li.nav-item.list-group-item
+        = link_to "Регистрация", new_user_registration_path, class: "nav-link"

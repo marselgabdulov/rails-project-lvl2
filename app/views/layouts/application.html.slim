@@ -1,0 +1,19 @@
+doctype html
+html.h-100 lang="ru" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title RailsProjectLvl2
+    meta content="width=device-width,initial-scale=1" name="viewport" /
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body.d-flex.flex-column.h-100
+    .container
+      header
+        = render "layouts/navigation"
+    .container
+      main role="main" 
+        p.notice= notice
+        p.alert= alert
+        = yield
