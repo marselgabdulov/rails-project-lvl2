@@ -1,11 +1,11 @@
-nav.navbar.navbar-light
-  .container-fluid
-    = link_to 'X', root_path, class: 'navbar-brand'
-    ul.navbar-nav.list-group.list-group-horizontal.d-flex
-      li.nav-item.list-group-item
-        - if user_signed_in?
-          = link_to "Выйти", destroy_user_session_path, method: :delete, class: "nav-link"
-        - else
-          = link_to "Войти", new_user_session_path, class: "nav-link"
-      li.nav-item.list-group-item
-        = link_to "Регистрация", new_user_registration_path, class: "nav-link"
+ nav.navbar.navbar-light.bg-light.navbar-expand-lg.justify-content-between.px-3
+  = link_to "ХКБ", root_path, class: 'navbar-brand'
+  ul.navbar-nav.mr-auto.mr-3
+    - if user_signed_in?
+      li.nav-item
+        = link_to "Выйти", destroy_user_session_path, method: :delete, class: 'nav-link'
+    - else
+      li.nav-item
+        = link_to "Войти", new_user_session_path, class: 'nav-link'
+      li.nav-item
+        = link_to "Регистрация", new_user_registration_path, class: 'nav-link'
